@@ -35,7 +35,7 @@ router.post("/", (req, res, next) => {
     } else if (isNaN(price)) {
       throw new expressError("Price not entered correctly", 400);
     } else if (foundItem) {
-      throw new expressError("Item already exist", 400);
+      throw new expressError("Item already exist", 409);
     }
   } catch (e) {
     return next(e);
